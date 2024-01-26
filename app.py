@@ -9,7 +9,7 @@ load_dotenv()
 app = Flask(__name__)
 
 @app.route('/')
-def main():
+def index():
   if request.args.get("secret") != os.getenv('SECRET'):
     return "Not authorized", 401
 
