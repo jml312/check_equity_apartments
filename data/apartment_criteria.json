@@ -16,7 +16,7 @@
         "max": null
     },
     "sq_ft": {
-        "min": null,
+        "min": 700,
         "max": null
     },
     "floor_num": {
