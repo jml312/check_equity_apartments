@@ -19,5 +19,5 @@ def index():
     apartment_criteria = load(jf)  
     
     res, status_code = apartment_report(apartment_links, apartment_criteria)
-    
-    return res, status_code
+     
+    return res, status_code 
