@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-  if request.args.get("secret") != os.getenv('SECRET'):
+  if request.headers.get("Authorization") != f"Bearer {os.getenv('SECRET')}":
     return "Not authorized", 401
 
   with open("./data/apartment_links.json", "r") as jf:

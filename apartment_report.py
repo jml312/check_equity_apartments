@@ -55,8 +55,8 @@ def apartment_report(apartment_links, apartment_criteria):
     draft.subject = "Today's Apartment Listings 🏠"    
     draft.body = formatted_listings
     draft.to = [
-      # {'name': 'Catherine (personal)', 'email': 'catherinefelix@hotmail.com'},
-      # {'name': 'Catherine (work)', 'email': 'cmailly@navatx.com'},
+      {'name': 'Catherine (personal)', 'email': 'catherinefelix@hotmail.com'},
+      {'name': 'Catherine (work)', 'email': 'cmailly@navatx.com'},
       {'name': 'Josh', 'email': 'joshlevy.texas@gmail.com'},
     ]
     draft.send()
