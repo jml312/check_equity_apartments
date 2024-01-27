@@ -10,4 +10,6 @@ def get_building(text_data, multi_options):
   }
   
 def capitalize(word):
+  if not word: 
+    return None
   return word[0].upper() + word[1:]
