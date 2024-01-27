@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from helpers.get_apartment_details import get_apartment_details
 from helpers.get_special_details import get_special_details
 from helpers.format_listing import format_listings
+from helpers.get_building import get_building
 import os
 from nylas import APIClient
 
@@ -19,15 +20,17 @@ def apartment_report(apartment_links, apartment_criteria):
     for apartment in all_apartments:
       specs = apartment.find("div", class_="specs")
       text_data = [data for data in specs.text.split(" ") if data]
-      
+            
       meets_criteria, apartment_details = get_apartment_details(text_data, apartment_criteria)
       if meets_criteria:
         special_offer = {
           "special_offer": get_special_details(apartment)
         }
+        building = get_building(apartment.text.split(" "), apartment_link["multi_options"])
         apartment_data.append({
           **apartment_details,
-          **special_offer
+          **special_offer,
+          **building
         })
         
     # sort by availability date, then price

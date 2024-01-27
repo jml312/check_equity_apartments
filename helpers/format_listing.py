@@ -11,10 +11,10 @@ def format_listings(listings):
     
     formatted_listing += "<ul>"
     for ld in listing_data:
-      price, term, beds, baths, sq_ft, floor_num, available, special_offer = ld["price"], ld["term"], ld["beds"], ld["baths"], ld["sq_ft"], ld["floor_num"], ld["available"], ld["special_offer"]
+      price, term, beds, baths, sq_ft, floor_num, available, special_offer, building = ld["price"], ld["term"], ld["beds"], ld["baths"], ld["sq_ft"], ld["floor_num"], ld["available"], ld["special_offer"], ld["building"]
       available = "{:%B %d}".format(available).lower()
       
-      formatted_listing += f"<li>{beds} {pluralize(beds, 'bed')}, {baths} {pluralize(baths, 'bath')} on floor {floor_num} with {sq_ft} sf for {price}. Ready {available} with a {term}nth lease. {'' if not special_offer else f'{special_offer}!'}</li>"      
+      formatted_listing += f"<li>{building + ' ' if building else ''}{beds} {pluralize(beds, 'bed')}, {baths} {pluralize(baths, 'bath')} on floor {floor_num} with {sq_ft} sf for {price}. Ready {available} with a {term}nth lease. {'' if not special_offer else f'{special_offer}!'}</li>"      
     
     formatted_listing += "</ul>"
       

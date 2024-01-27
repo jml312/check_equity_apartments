@@ -1,26 +1,32 @@
 [
     {
         "name": "The Towers at Longfellow Apartments",
-        "url": "https://www.equityapartments.com/boston/west-end/the-towers-at-longfellow-apartments"
+        "url": "https://www.equityapartments.com/boston/west-end/the-towers-at-longfellow-apartments",
+        "multi_options": []
     },
     {
         "name": "The West End Apartments - Asteria, Villas and Vesta",
-        "url": "https://www.equityapartments.com/boston/west-end/the-west-end-apartments-asteria-villas-and-vesta"
+        "url": "https://www.equityapartments.com/boston/west-end/the-west-end-apartments-asteria-villas-and-vesta",
+        "multi_options": ["asteria", "villas", "vesta"]
     },
     {
         "name": "Emerson Place Apartments",
-        "url": "https://www.equityapartments.com/boston/west-end/emerson-place-apartments"
+        "url": "https://www.equityapartments.com/boston/west-end/emerson-place-apartments",
+        "multi_options": []
     },
     {
         "name": "660 Washington Apartments",
-        "url": "https://www.equityapartments.com/boston/boston-common/660-washington-apartments"
+        "url": "https://www.equityapartments.com/boston/boston-common/660-washington-apartments",
+        "multi_options": []
     },                               
     {
         "name": "Avenir Apartments",
-        "url": "https://www.equityapartments.com/boston/north-end/avenir-apartments"
+        "url": "https://www.equityapartments.com/boston/north-end/avenir-apartments",
+        "multi_options": []
     },
     {
         "name": "Alcott Apartments",
-        "url": "https://www.equityapartments.com/boston/west-end/alcott-apartments"
+        "url": "https://www.equityapartments.com/boston/west-end/alcott-apartments",
+        "multi_options": []
     }
 ]

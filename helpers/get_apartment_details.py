@@ -30,7 +30,7 @@ def get_apartment_details(text_data, apartment_criteria):
       "baths": baths,
       "sq_ft": sq_ft,
       "floor_num": floor_num,
-      "available": available_date
+      "available": available_date,
     }
   except Exception:
     return False, ""
