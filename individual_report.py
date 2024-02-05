@@ -7,7 +7,7 @@ from helpers.send_email import send_email
 
 def individual_report(apartment_link, apartment_details):  
   try:
-    beds, baths, sqft, floors = apartment_details["beds"], apartment_details["baths"], apartment_details["sqft"],apartment_details["floors"]   
+    beds, baths, sqft = apartment_details["beds"], apartment_details["baths"], apartment_details["sqft"]   
     
     res = get(apartment_link["url"])
       
@@ -25,7 +25,7 @@ def individual_report(apartment_link, apartment_details):
       
       found_beds, found_baths, found_sqft, found_floor = details["beds"], details["baths"], details["sq_ft"],details["floor_num"] 
       
-      if beds == found_beds and baths == found_baths and sqft == found_sqft and found_floor in floors:
+      if beds == found_beds and baths == found_baths and sqft == found_sqft:
        apartment_data.append({
          **details,
          "special_offer": special,
