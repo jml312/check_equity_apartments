@@ -4,8 +4,7 @@ from helpers.get_apartment_details import get_apartment_details
 from helpers.get_special_details import get_special_details
 from helpers.format_listing import format_listings
 from helpers.get_building import get_building
-import os
-from nylas import APIClient
+from helpers.send_email import send_email
 
 def apartment_report(apartment_links, apartment_criteria):  
   listings = []
@@ -43,26 +42,4 @@ def apartment_report(apartment_links, apartment_criteria):
 
   formatted_listings = format_listings(listings)
   
-  CLIENT_ID = os.getenv("NYLAS_CLIENT_ID")
-  CLIENT_SECRET = os.getenv("NYLAS_CLIENT_SECRET")
-  ACCESS_TOKEN = os.getenv("NYLAS_ACCESS_TOKEN")
-  
-  nylas = APIClient(
-    CLIENT_ID,
-    CLIENT_SECRET,
-    ACCESS_TOKEN
-  )
-  
-  try:
-    draft = nylas.drafts.create()
-    draft.subject = "Today's Apartment Listings 🏠"    
-    draft.body = formatted_listings
-    draft.to = [
-      {'name': 'Catherine (personal)', 'email': 'catherinefelix@hotmail.com'},
-      {'name': 'Catherine (work)', 'email': 'cmailly@navatx.com'},
-      {'name': 'Josh', 'email': 'joshlevy.texas@gmail.com'},
-    ]
-    draft.send()
-    return "Report sent ✅", 200
-  except Exception as e:
-    return f"Error: {e}", 400
+  return send_email("Today's Apartment Listings 🏠", formatted_listings)
