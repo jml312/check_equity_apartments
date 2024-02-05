@@ -41,7 +41,6 @@ def apartment():
       "beds": request.args.get("beds"),
       "baths": request.args.get("baths"),
       "sqft": request.args.get("sqft"),
-      "floors": request.args.get("floors").split(","),
       "building": request.args.get("building")
     })
     
