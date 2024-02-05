@@ -23,7 +23,7 @@ def individual_report(apartment_link, apartment_details):
       _, details = get_apartment_details(text_data, {}, False)
       special = get_special_details(apartment)
       
-      found_beds, found_baths, found_sqft, found_floor = details["beds"], details["baths"], details["sq_ft"],details["floor_num"] 
+      found_beds, found_baths, found_sqft = details["beds"], details["baths"], details["sq_ft"] 
       
       if beds == found_beds and baths == found_baths and sqft == found_sqft:
        apartment_data.append({
