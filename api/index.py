@@ -38,10 +38,8 @@ def apartment():
         "url": request.args.get("url"),
         "name": request.args.get("name"),
       }, apartment_details={
-      "price": request.args.get("price"),
       "beds": request.args.get("beds"),
       "baths": request.args.get("baths"),
-      "availability": request.args.get("availability"),
       "sqft": request.args.get("sqft"),
       "floors": request.args.get("floors").split(","),
       "building": request.args.get("building")

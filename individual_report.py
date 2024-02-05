@@ -7,7 +7,7 @@ from helpers.send_email import send_email
 
 def individual_report(apartment_link, apartment_details):  
   try:
-    price, beds, baths, availability, sqft, floors = apartment_details["price"], apartment_details["beds"], apartment_details["baths"], apartment_details["availability"],apartment_details["sqft"],apartment_details["floors"]   
+    beds, baths, sqft, floors = apartment_details["beds"], apartment_details["baths"], apartment_details["sqft"],apartment_details["floors"]   
     
     res = get(apartment_link["url"])
       
@@ -23,9 +23,9 @@ def individual_report(apartment_link, apartment_details):
       _, details = get_apartment_details(text_data, {}, False)
       special = get_special_details(apartment)
       
-      found_price, found_beds, found_baths, found_availability, found_sqft, found_floor = details["price"][1:], details["beds"], details["baths"], details["available"], details["sq_ft"],details["floor_num"] 
+      found_beds, found_baths, found_sqft, found_floor = details["beds"], details["baths"], details["sq_ft"],details["floor_num"] 
       
-      if price == found_price.replace(",", "") and beds == found_beds and baths == found_baths and availability == found_availability.strftime("%m/%d/%Y") and sqft == found_sqft and found_floor in floors:
+      if beds == found_beds and baths == found_baths and sqft == found_sqft and found_floor in floors:
        apartment_data.append({
          **details,
          "special_offer": special,
